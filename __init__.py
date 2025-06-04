@@ -1,1 +1,1 @@
-from .scryfall_sdk import ScryfallSDK
+from scryfall_sdk import ScryfallSDK
