@@ -86,6 +86,14 @@ class ScryfallSDK:
         else:
             raise Exception(f"Failed to retrieve card: {response.status_code}")
 
+    def get_all_sets(self):
+        url = f"{self.base_url}/sets"
+        response = requests.get(url)
+        if response.status_code == 200:
+            return response.json()
+        else:
+            raise Exception(f"Failed to retrieve sets: {response.status_code}")
+
     def get_card_by_tcgplayer_id(self, tcgplayer_id):
         url = f"{self.base_url}/cards/tcgplayer/{tcgplayer_id}"
         response = requests.get(url)
